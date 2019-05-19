@@ -1,4 +1,6 @@
-import { combineReducers } from 'redux';
+import {
+  combineReducers
+} from 'redux';
 
 const INITIAL_STATE = {
   current: [],
@@ -10,8 +12,17 @@ const INITIAL_STATE = {
   ],
 };
 
-const tutorsReducer = (state = INITIAL_STATE, action) => {
-  switch (action.type) {
+const tutors = 'Ringo, John, Paul, George'
+
+export const tutorsTwo = n => ({
+  type: tutors,
+  payload:n,
+})
+
+const tutorsReducer = (state = '', {type,payload}) => {
+  switch (type) {
+    case tutors:
+      return state + payload;
     default:
       return state
   }
