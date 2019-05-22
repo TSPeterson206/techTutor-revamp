@@ -10,6 +10,7 @@ import Tutors from '../screens/Tutors';
 
 const HomeStack = createStackNavigator({
   Home: HomeScreen,
+  Tutors:Tutors,
 });
 
 HomeStack.navigationOptions = {
