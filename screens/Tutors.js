@@ -12,17 +12,33 @@ import {
 import axios from 'axios';
 
 ComponentDidMount = () => {
-const tutors = axios.get('http://localhost:8000/tutors')
+axios.get('http://localhost:8000/tutors')
+.then(res => {
+  const tutors = res.data;
+  let newTutors = fetch('http://localhost:8000/tutors')
+  return tutors
+})
 this.setState({
   tutors:tutors,
+  newTutors:newTutors
 })
 }
+
+// axios.get(`https://jsonplaceholder.typicode.com/users`)
+//       .then(res => {
+//         const persons = res.data;
+//         this.setState({ persons });
+//       })
+//   }
+
+
 export default class Tutors extends React.Component {
   constructor(props) {
     super(props)
 
       this.state = {
-        // tutors:tutors
+        tutors:tutors,
+        newTutors:newTutors
       }
   }
   static navigationOptions = {
@@ -32,7 +48,7 @@ export default class Tutors extends React.Component {
   render() {
     return(
     <View>
-      {/* {this.state.tutors.map((ele)=>{return ele})} */}
+      {this.state.tutors.map((ele)=>{return ele})}
       <Text>tutors</Text>
     </View>
     )
