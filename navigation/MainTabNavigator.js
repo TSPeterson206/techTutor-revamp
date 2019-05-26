@@ -3,14 +3,13 @@ import { Platform } from 'react-native';
 import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
 
 import TabBarIcon from '../components/TabBarIcon';
-import HomeScreen from '../screens/HomeScreen';
-import LinksScreen from '../screens/LinksScreen';
-import SettingsScreen from '../screens/SettingsScreen';
-import Tutors from '../screens/Tutors';
+import HomeScreen from '../components/HomeScreen';
+import LinksScreen from '../components/LinksScreen';
+import SettingsScreen from '../components/SettingsScreen';
+import Tutors from '../components/Tutors';
 
 const HomeStack = createStackNavigator({
   Home: HomeScreen,
-  Tutors:Tutors,
 });
 
 HomeStack.navigationOptions = {
