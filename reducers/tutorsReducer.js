@@ -2,32 +2,16 @@ import {
   combineReducers
 } from 'redux';
 
-const INITIAL_STATE = {
-  current: [],
-  possible: [
-    'Allie',
-    'Gator',
-    'Lizzie',
-    'Reptar',
-  ],
-};
+import { GET_TUTORS } from '../actions/tutors'
 
-const tutors = 'Ringo, John, Paul, George'
-
-export const tutorsTwo = n => ({
-  type: tutors,
-  payload:n,
-})
-
-const tutorsReducer = (state = '', {type,payload}) => {
+export const tutorsData = (state = {}, {type,payload}) => {
   switch (type) {
-    case tutors:
-      return state + payload;
+    case GET_TUTORS:
+      return {
+        ...state,
+        tutors:payload
+      }
     default:
       return state
   }
 };
-
-export default combineReducers({
-  tutors: tutorsReducer,
-});
