@@ -11,13 +11,17 @@ import {
 } from 'react-native';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux'
+import getTutors from '../actions/tutors'
 
 class Tutors extends React.Component {
   constructor(props) {
     super(props)
 
       this.state = {
+        allTutors:getTutors
       }
+
+      console.log(getTutors)
   }
   static navigationOptions = {
     title: 'Tutors',
@@ -26,7 +30,7 @@ class Tutors extends React.Component {
   render() {
     return(
     <View>
-      {this.state.tutors.map((ele)=>{return ele})}
+      {/* {this.state.tutors.map((ele)=>{return ele})} */}
       <Text>tutors</Text>
     </View>
     )
@@ -40,7 +44,7 @@ return ({
 }
 
 const mapDispatchToProps = (dispatch) => {
-  bindActionCreators({}, dispatch)
+  bindActionCreators({getTutors}, dispatch)
 }
 
 
