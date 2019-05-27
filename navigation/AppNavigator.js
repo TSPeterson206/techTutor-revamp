@@ -12,12 +12,13 @@ import Tutors from '../components/Tutors'
 
 const RootStack  = createStackNavigator (
   {
-    Main:MainTabNavigator,
+    // Main:MainTabNavigator,
     Tutors:Tutors,
-  },
-  {
-  initialRouteName:Tutors,
   }
+  ,
+  // {
+  // initialRouteName:Tutors,
+  // }
 )
 
 export default AppNavigator = createAppContainer(RootStack)

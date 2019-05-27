@@ -1,7 +1,3 @@
-import {
-  combineReducers
-} from 'redux';
-
 import { GET_TUTORS } from '../actions/tutors'
 
 export const tutorsData = (state = {}, {type,payload}) => {
@@ -9,7 +5,7 @@ export const tutorsData = (state = {}, {type,payload}) => {
     case GET_TUTORS:
       return {
         ...state,
-        tutors:payload
+        getTutors:payload
       }
     default:
       return state
