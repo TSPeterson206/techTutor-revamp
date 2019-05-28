@@ -8,7 +8,7 @@ export const getTutors = () => {
     .then(response => {
       dispatch({
         type:GET_TUTORS,
-        payload:response
+        payload:response.data.data
       })
       console.log(response)
 
@@ -16,6 +16,6 @@ export const getTutors = () => {
     .catch((error) => console.warn(error.response))
   )
 }
-const newOne = axios.get('http://localhost:8000/tutors')
-            .then((response) => {return response})
-console.log('new', newOne)
+// const newOne = axios.get('http://localhost:8000/tutors')
+//             .then((response) => {return response})
+// console.log('new', newOne)
