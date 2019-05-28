@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import { Provider } from 'react-redux'
 import store from './store'
 import AppNavigator from './navigation/AppNavigator'
+// import MainTabNavigator from './navigation/MainTabNavigator'
 
 import { Platform, StatusBar, StyleSheet, View } from 'react-native';
 import { AppLoading, Asset, Font, Icon } from 'expo';
+import MainTabNavigator from './navigation/MainTabNavigator';
 
 _loadResourcesAsync = async () => {
   return Promise.all([
