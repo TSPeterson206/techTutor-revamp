@@ -14,7 +14,6 @@ import BottomNav from '../components/BottomNav'
 
 const RootStack  = createStackNavigator (
   {
-    // Main:MainTabNavigator,
     Tutors:Tutors,
     Homepage:Homepage,
     Main:MainTabNavigator,
@@ -23,7 +22,8 @@ const RootStack  = createStackNavigator (
   }
   // ,
   // {
-  // initialRouteName:Tutors,
+  //   initialRouteName: 'Homepage',
+  //   headerMode: 'none'
   // }
 )
 
