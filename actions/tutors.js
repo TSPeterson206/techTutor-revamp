@@ -1,16 +1,16 @@
-import axios from 'axios'
-const BASE_URL = 'http://localhost:8000'
+import axios from 'react-native-axios'
+const BASE_URL = 'http://192.168.0.34:8000'
 
 export const GET_TUTORS = 'GET_TUTORS'
 export const getTutors = () => {
   return dispatch => (
-    axios.get(`${BASE_URL}/tutors/1`)
+    axios.get(`${BASE_URL}/tutors`)
     .then(response => {
       dispatch({
         type:GET_TUTORS,
-        payload:response.data.data
+        payload:response.data
       })
-      console.log(response)
+      console.log('tutoraction', response.data)
 
     })
     .catch((error) => console.warn(error.response))
