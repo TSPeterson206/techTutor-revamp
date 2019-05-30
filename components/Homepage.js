@@ -22,6 +22,14 @@ class Homepage extends React.Component {
     return (
       <View>
         <Text>Trial Home Page</Text>
+        <View>
+      <Text>{!this.state.dataSource ? this.state.dataSource.data.map((ele)=>{
+        <Tutor
+          tutorname={ele.tutorname}
+          >
+        </Tutor> 
+      }): null}</Text>
+      </View>
       </View>
     )
   }
