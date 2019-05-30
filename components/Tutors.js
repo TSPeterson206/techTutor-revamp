@@ -14,6 +14,7 @@ import { connect } from 'react-redux'
 import getTutors from '../actions/tutors'
 import BottomNav from './BottomNav'
 import axios from 'react-native-axios'
+import Tutor from './Tutor'
 
 class Tutors extends React.Component {
   constructor(props) {
@@ -22,12 +23,15 @@ class Tutors extends React.Component {
       this.state = {
         allTutors:getTutors,
         dataSource:[]
+        // toots:newVar.data
       }
-
-      console.log('constructor', this.state.dataSource.data)
+      console.log('constructor', this.state.dataSource)
   }
 
 componentDidMount() {
+  this.getAllTutors()
+  // console.log('constructor', this.state.dataSource)
+
   return axios.get('http://192.168.0.34:8000/tutors')
 // .then(response => response.json())
 .then((responseJson)=> {
@@ -39,6 +43,17 @@ componentDidMount() {
 .catch(error=>console.log(error)) //to catch the errors if any
 }
 
+getAllTutors = async () => {
+  try {
+  const allTutors = await axios.get('http://192.168.0.34:8000/tutors')
+  this.setState({
+   dataSource: allTutors.data
+  })
+  console.log('hi', allTutors.data)
+} catch (err) {
+  console.log(err)
+}
+}
 
   handleLogIn = () => this.props.navigation.navigate('Homepage')
 
@@ -50,7 +65,14 @@ componentDidMount() {
     return(
       <View>
     <TouchableOpacity style={styles.container} onPress={this.handleLogIn}>
-      {/* <Text>{this.state.dataSource.data[0].id}</Text> */}
+      <View>
+      <Text>{this.state.dataSource ? this.state.dataSource.map((ele)=>{
+        <Tutor
+          tutorname={ele.tutorname}
+          >
+        </Tutor> 
+      }): null}</Text>
+      </View>
       <Text>tutors</Text>
     </TouchableOpacity>
       <View>
