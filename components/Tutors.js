@@ -66,12 +66,12 @@ getAllTutors = async () => {
       <View>
     <TouchableOpacity style={styles.container} onPress={this.handleLogIn}>
       <View>
-      <Text>{this.state.dataSource ? this.state.dataSource.map((ele)=>{
+      {/* <Text>{this.state.dataSource ? this.state.dataSource.map((ele)=>{
         <Tutor
           tutorname={ele.tutorname}
           >
         </Tutor> 
-      }): null}</Text>
+      }): null}</Text> */}
       </View>
       <Text>tutors</Text>
     </TouchableOpacity>
